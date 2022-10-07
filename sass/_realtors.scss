@@ -1,0 +1,43 @@
+
+.realtors {
+    background-color: $color-secondary;
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    gap: 2rem;
+    justify-items: center;
+
+    &__list {
+        display: grid;
+        grid-template-columns: min-content max-content;
+        column-gap: 2rem;
+        row-gap: 5vh;
+        align-items: center; //make picture and text line up to each other neatly    
+        
+        @media only screen and (max-width: $breakpoint-medium) {
+            grid-template-columns: repeat(3, min-content max-content); //can put multiple trackss in a repeat function :D
+        }
+        
+        @media only screen and (max-width: $breakpoint-small) {
+            grid-template-columns: min-content max-content;
+        }
+    }
+
+    &__img {
+        width: 9rem;
+        border-radius: 100%;
+        display: block;
+    }
+
+    &__sold {
+        text-transform: uppercase;
+        color: $color-grey-light-2;
+        margin-top: -3px;
+    }  
+    
+    @media only screen and (max-width: $breakpoint-medium) {
+        grid-column: full-start / full-end; 
+    }
+}
